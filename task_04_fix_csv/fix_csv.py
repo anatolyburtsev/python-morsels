@@ -15,7 +15,7 @@ with open(input_file, 'r') as f:
     text = f.readlines()
     if delimiter is None and quote is None:
         # smart detect delimiter and quote
-        dialect = csv.Sniffer().sniff("".join(text))
+        dialect = csv.Sniffer().sniff("".join(text[:10]))
         csv.register_dialect("custom_dialect", dialect)
     else:
         # force set delimiter and quote
