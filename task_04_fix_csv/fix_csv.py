@@ -29,5 +29,4 @@ with open(input_file, 'r') as f:
     data = list(csv.reader(text, dialect="custom_dialect"))
 
 with open(output_file, "w") as f:
-    writer = csv.writer(f)
-    writer.writerows(data)
+    csv.writer(f).writerows(data)
